@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Space color palette */
+  --color-space:         #0A0A16;
+  --color-deep-purple:   #1E112A;
+  --color-neon-blue:     #4FC3F7;
+  --color-neon-purple:   #CE93D8;
+  --color-neon-green:    #69F0AE;
+  --color-star-white:    #E8EAF6;
+  --color-warm-frame:    #2C1E1A;
+  --color-warm-border:   #EAD1A8;
+  --color-gold:          #FFD700;
+
+  /* Fonts */
+  --font-pixel: var(--font-pixel);
+  --font-body:  var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #0A0A16;
+  --foreground: #E8EAF6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0A0A16;
+  color: #E8EAF6;
+  font-family: var(--font-body), 'Space Grotesk', sans-serif;
 }
+
+/* Pixel font utility */
+.font-pixel {
+  font-family: var(--font-pixel), 'Press Start 2P', monospace;
+}
+
+/* Retro UI frame */
+.retro-frame {
+  background: #2C1E1A;
+  border: 2px solid #EAD1A8;
+  border-radius: 4px;
+}
+
+/* Neon glow effects */
+.glow-blue   { text-shadow: 0 0 8px #4FC3F7, 0 0 20px #4FC3F7; }
+.glow-purple { text-shadow: 0 0 8px #CE93D8, 0 0 20px #CE93D8; }
+.glow-green  { text-shadow: 0 0 8px #69F0AE, 0 0 20px #69F0AE; }
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #0A0A16; }
+::-webkit-scrollbar-thumb { background: #CE93D8; border-radius: 3px; }
